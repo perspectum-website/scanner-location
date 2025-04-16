@@ -7889,7 +7889,8 @@
     };
 
     const filtered = facilities.filter(facility => {
-      const matchesQuery = facility.address.toLowerCase().includes(query) || facility.name.toLowerCase().includes(query);
+      const regex = new RegExp(`\\b${query}\\b`, 'i');
+      const matchesQuery = regex.test(facility.address) || regex.test(facility.name);
 
       const matchesFilters = Object.entries(filters).every(([key, val]) => {
         if (val === "all") return true;
