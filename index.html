@@ -10,7 +10,7 @@
     body { font-family: Arial, sans-serif; padding: 20px; max-width: 1000px; margin: auto; }
     input, select { padding: 10px; font-size: 1rem; margin: 5px 10px 15px 0; }
     .filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 15px; }
-    .view-toggle { margin-bottom: 20px; }
+    .view-toggle { margin-bottom: 20px; text-align: center}
     .view-toggle button {
       padding: 8px 16px;
       font-size: 1rem;
@@ -29,14 +29,13 @@
 </head>
 <body>
 
-<h2>Scanner Locations</h2>
-
 <div class="view-toggle">
   <button onclick="setView('list')">🔍 List View</button>
   <button onclick="setView('map')">🗺️ Map View</button>
+  <input type="text" id="searchInput" placeholder="Search by country, postcode, or name..." / style="width: 50%; padding: 12px">
 </div>
 
-<input type="text" id="searchInput" placeholder="Search by country, postcode, or name..." />
+
 
 <div class="filters">
   <div><label>Fast T1 Cardiac</label><br><select id="fastT1CardiacFilter">
